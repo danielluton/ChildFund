@@ -1,0 +1,13 @@
+<%= title "Modify Mapping for #{@survey.name}", true %>
+
+
+<%= form_for(@object_mapping, :url => survey_object_mappings_path(@survey)) do |f|%>	
+
+	<%= f.hidden_field :survey_id %>
+
+	<%= f.select :salesforce_object_name, @salesforce_object_names.collect{|an_object| [an_object.label, an_object.name]}, :prompt => 'Select Salesforce Object' %>
+
+
+	<%= f.submit 'Proceed' %>
+
+<% end %>

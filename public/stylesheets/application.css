@@ -1,0 +1,392 @@
+body {
+	font-family: Georgia,"Times New Roman",serif;
+	background-color: #E9E8E0;
+	font-size: 10pt;
+	padding: 0;
+	margin: 0;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ul, ol {
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+}
+
+a:link, a:visited, a:active {
+  text-decoration: underline;
+	color: #008FD0;
+}
+
+h2{
+	font-size: 1.285em;
+  font-style: italic;
+}
+
+div.top {
+	background: url("../images/bg.jpg") repeat-x scroll 0 0 white;
+	border-bottom: 5px solid #008FD0;
+	height: 75px;
+  padding: 15px;	
+}
+
+div.middle {
+	margin: 5px;
+	padding: 5px;
+}
+
+div.banner {
+	float: left;
+}
+
+div.banner a {
+	display: block;
+	height: 32px;
+	width: 132px;
+	background: url("../images/main.png") no-repeat scroll -10px -24px transparent;
+}
+
+div.menu {
+	float: right;
+}
+
+div.menu ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+div.menu ul li {
+	float: left;
+	margin: 0 40px 0 0;
+}
+
+div.menu ul li a {
+  display: block;
+  font-size: 1.142em;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  line-height: 3em;
+  text-decoration: none;
+  color: #333333;
+}
+
+div.breadcrumbs{
+	font-style: italic;
+	float: left;
+}
+
+div.messages{
+	margin-top: 15px;
+}
+
+div.content{
+	padding-top: 20px;
+}
+
+div.field_mapping, div.object_label
+{
+	padding: 5px;	
+}
+
+ol.object_mappings li.object_mapping div.object_name{
+	margin: 2px;
+}
+
+ol.salesforce_objects, ol.dictionaries{
+	width: 60%;
+}
+
+li.object_mapping div.object_name h3, li.salesforce_object div.salesforce_object div.object_label, li.dictionary div.dictionary div.object_label{
+	float: left;
+}
+
+li.object_mapping div.object_name div.actions, li.salesforce_object div.salesforce_object div.actions, li.dictionary div.dictionary div.actions{
+	float: right;
+	padding-right: 5px;
+}
+
+ol.object_mappings, ol.field_mappings, ol.salesforce_objects, ol.dictionaries{
+	padding-left: 5px;
+}
+
+ol.object_mappings li, ol.field_mappings li, ol.salesforce_objects li, ol.dictionaries li{
+	list-style-type: none;
+}
+
+div.field_mapping_form{
+	width: 100%;
+/*	max-width: 900px;*/
+}
+
+div.field_name, div.lookup_type, div.question_name,  div.lookup_object_name, div.lookup_condition{
+	float: left;
+}
+
+div.field_name
+{
+	width: 25%;
+}
+
+div.question_name
+{
+	width: 60%;
+}
+
+div.lookup_object_name
+{
+	width: 25%;
+}
+
+div.lookup_condition{
+	width: 35%;	
+}
+
+div.lookup_type{
+	width: 10%;
+}
+
+div.field_mapping_form div.actions{
+	margin-top: 10px;
+	text-align: right;
+}
+
+div.clear
+{
+	clear: both;
+}
+
+div.notice{
+	border: 1px solid #33CC66;
+	background-color: #99FF66;
+	padding: 5px;
+}
+
+div.error{
+	border: 1px solid #FF0000;
+	background-color: #FF3333;
+	padding: 5px;
+}
+
+div.survey div.survey_name{
+	float: left;
+	padding: 3px;
+}
+
+div.survey div.survey_name span {
+	font-weight: bold;
+}
+
+div.survey div.actions{
+	float: right;
+	padding: 5px;
+}
+
+ol.questions li span.question_name{
+	font-weight: bold;
+}
+
+ol.surveys{
+	padding-left: 0;
+}
+
+ol.surveys li{
+	list-style-type: none;
+}
+
+ol.surveys li div.survey{
+	margin-bottom: 3px;
+}
+
+ol.field_mappings li{
+	padding: 2px;
+/*	width: 500px;*/
+}
+
+ol.field_mappings li div.actions{
+	float: right;
+}
+
+ol.field_mappings li div.mapping{
+	float: left;
+}
+
+table.import_histories{
+	width: 80%;
+}
+
+table.import_histories{
+	border-collapse: collapse;
+}
+
+table.import_histories td, table.import_histories th{
+	border-collapse: collapse;
+	padding: 5px;
+}
+
+table.import_histories td{
+	border-bottom: 2px solid #FFF;
+}
+
+table.import_histories th{
+	font-weight: bold;
+	text-align: left;
+}
+
+table.import_histories tr.success{
+	background-color: #AAFFAA;
+}
+
+table.import_histories tr.failed{
+	background-color: #F7403A;
+}
+
+table.import_histories tr.incomplete{
+	background-color: #FFFF99;
+}
+
+table.dictionaries tr.even{
+    background-color: #DFD7C8;
+}
+table.dictionaries tr.odd{
+    background-color: #E9E8E0;
+}
+
+div.menu{
+	text-align: right;
+}
+
+span.highlighted{
+	background-color: #ECFF0F;
+	padding: 0 2px;
+}
+
+div.search_form{
+	text-align: right;
+	padding: 5px;
+}
+
+span.sync_with_epi_surveyor{
+	float: right;
+}
+
+div.field{
+	margin: 5px;
+	padding: 5px;
+}
+
+div.configuration_form{
+	max-width: 700px;
+	width: 80%;
+}
+ol.surveys li:nth-child(2n+1),
+	ol.field_mappings li:nth-child(2n+1),
+	div.field_mappings div.field_mapping:nth-child(2n+1), 
+	div.configuration_form div.field:nth-child(2n+1),
+	ol.users li:nth-child(2n+1),
+	ol.salesforce_objects li:nth-child(2n+1) ,
+    ol.dictionaries li:nth-child(2n+1)
+{
+	background-color: #DFD7C8;
+}
+
+div.field div.label{
+	width: 200px;
+	float:left;
+}
+div.field div.input{
+	float:left;
+}
+
+ol.users{
+	padding-left: 5px;
+	max-width: 500px;
+	width: 60%;	
+}
+
+ol.users div.user{
+	padding: 5px;
+}
+
+ol.users li{
+	list-style-type: none;
+	padding: 5px 0;
+}
+
+div.user div.email{
+	width: 200px;
+	float:left;
+}
+
+div.user div.actions{
+	float:right;
+}
+
+div.help{
+	background-color: #DFD7C8;
+	padding: 5px;
+	border: 1px solid #333333;
+	margin: 5px;
+}
+
+div.help h3, div.help h4{
+	font-weight: bold;
+}
+
+input.error { border: 1px solid red; }
+
+label.error {
+		color: red;
+}
+
+span.survey_last_modified{
+		font-style: italic;
+		font-weight: normal;
+		color: #F7403A;
+}
+
+.best_in_place {
+  padding: .1m;
+  cursor: hand;
+  cursor: pointer;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #bbb;
+}
+
+.best_in_place:hover, #user_account .do_hover {
+  background-color: #aaa;
+}
+
+.purr {
+  position: fixed;
+  width: 324px;
+  top: 50%;
+  left: 50%;
+  margin-left: -162px;
+  padding: 20px;
+  background-color: #000000;
+  color: #FFFFFF;
+  border: 2px solid #AAA;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.purr:hover .close  {
+  position: absolute;
+  top: 5px;
+  right: 3px;
+  display: block;
+  width: 25px;
+  height: 25px;
+  text-indent: -9999px;
+}

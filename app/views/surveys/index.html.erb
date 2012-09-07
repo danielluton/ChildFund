@@ -1,0 +1,76 @@
+<% content_for :stylesheets do %>
+	<%= stylesheet_link_tag :all %>
+	<%= stylesheet_link_tag	"http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/themes/redmond/jquery-ui.css" %>
+<% end %>
+
+<% content_for :javascripts do %>
+	<%= javascript_include_tag :defaults,
+		"https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js",
+		"https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.min.js",
+		"jquery.validate",
+		"surveys_index_prototype",
+		"surveys_index_jquery"
+	%>
+<% end %>
+
+<% title 'Surveys' %>
+
+<% content_for :middle_right do %>
+	<div class="search_form">
+		<%= form_tag search_surveys_path, :method => :get do %>
+			<input type="search" name="query" value="<%= params[:query] %>" placeholder="Search Survey" size="20"/>
+			<%= submit_tag 'Search' %>
+		<% end %>
+	</div>
+<% end %>
+
+<%= form_tag("", :method => "get", :id => "filter_form") do %>
+
+<table><tr>
+	<td>Mapping Last modified date:</td>
+	<td><%= text_field_tag("start_date") %></td>
+	<td><%= text_field_tag("end_date") %></td>
+	<td><%= submit_tag("Filter") %></td>
+</tr><tr>
+		<td></td>
+		<td><div id="start_date_error"/></td>
+		<td><div id="end_date_error"/></td>
+		<td></td>
+	</tr>
+</table>
+	<div><span style="display:block;margin-left:195px;" id="start_date_error"></span>
+	<span style="margin-left:22px;" id="end_date_error"></span>
+</div>
+<% end %>
+
+<%= form_tag  do %>
+
+	<%= render :partial => 'select_and_import' %>
+	
+	<span class="sync_with_epi_surveyor">
+		<%= link_to 'Refresh Surveys List from EpiSurveyor', sync_with_epi_surveyor_surveys_path, :method => :post %>
+	</span>
+	
+	<ol class="surveys">
+	<% @surveys.sort_by{|survey| survey.name}.each do |survey|%>
+		<li>
+			<div class="survey">
+				<div class="survey_name">
+					<%= check_box_tag 'survey_ids[]', survey.id %>
+					<span><%= survey.name %></span> | 
+					<%= "Imported #{distance_of_time_in_words(Time.now, survey.last_imported_at)} ago" if survey.last_imported_at%> | 
+					<span class="survey_last_modified"><%= "Mapping changed #{distance_of_time_in_words(Time.now, survey.mapping_last_modified_at)} ago" if survey.mapping_last_modified_at%></span>
+				</div>
+				<div class="actions">					
+					<%= link_to 'Mappings', survey_mappings_path(survey.id) %> |
+					<%= link_to 'History', survey_import_histories_path(survey.id) %> |
+					<%= link_to 'Questions', survey_questions_path(survey.id) %> |
+					<%= link_to 'Notification', edit_survey_path(survey.id) %>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</li>
+	<%end%>
+	</ol>
+	<%= render :partial => 'select_and_import' %>
+<% end %>
